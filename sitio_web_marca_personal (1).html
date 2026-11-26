@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claudia Vaca | Agente Inmobiliario Century 21 Magno - Santa Cruz, Bolivia</title>
+  <meta name="description" content="Asesoría inmobiliaria profesional en Santa Cruz, Bolivia. Vende, compra o invierte en inmuebles con el respaldo de Claudia Vaca y Century 21 Magno.">
+  
+  <!-- SEO JSON-LD ESTRUCTURADO (ProfilePage & RealEstateAgent) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Claudia Vaca - Century 21 Magno",
+    "image": "https://via.placeholder.com/400x400?text=Claudia+Vaca",
+    "telephone": "+59163418808",
+    "url": "https://wa.me/59163418808",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Cruz",
+      "addressCountry": "BO"
+    },
+    "priceRange": "$$$",
+    "description": "Asesoría integral en compra, venta e inversión de bienes raíces en Santa Cruz con Century 21 Magno."
+  }
+  </script>
+
+  <style>
+    /* 1. RESET Y VARIABLES GLOBALES (TOKENS CSS) */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Paleta Corporativa Inmobiliaria de Alto Contraste */
+      --primary: #1e3a8a;       /* Azul Marino Autoridad */
+      --primary-dark: #0f172a;
+      --accent: #16a34a;        /* Verde Conversión WhatsApp */
+      --accent-hover: #15803d;
+      --gold: #d97706;          /* Dorado Century 21 Accent */
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      
+      /* Tipografía y Espaciado Fluido (clamp) */
+      --font-h1: clamp(1.85rem, 2vw + 1.4rem, 3.25rem);
+      --font-h2: clamp(1.4rem, 1.2vw + 1.1rem, 2.25rem);
+      --font-body: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+      --space-section: clamp(3rem, 5vw + 1.5rem, 5.5rem);
+      --gutter: clamp(1rem, 2vw + 0.5rem, 2rem);
+      
+      /* Sombras y Transiciones */
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: var(--font-body);
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h1 { font-size: var(--font-h1); }
+    h2 { font-size: var(--font-h2); text-align: center; margin-bottom: 2.5rem; }
+
+    .text-highlight {
+      color: var(--gold);
+    }
+
+    /* NAV BAR PERSISTENTE */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    /* LAYOUT GENERAL */
+    .container {
+      width: min(100% - (var(--gutter) * 2), 1140px);
+      margin-inline: auto;
+    }
+
+    section {
+      padding-block: var(--space-section);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+      gap: var(--gutter);
+      align-items: center;
+    }
+
+    /* 1 & 2. HERO & MULTIMEDIA SECTION */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding-block: clamp(3rem, 6vw, 6rem);
+    }
+
+    .hero h1, .hero p {
+      color: #ffffff;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(217, 119, 6, 0.2);
+      color: #fef3c7;
+      border: 1px solid var(--gold);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      font-size: clamp(1.05rem, 0.5vw + 1rem, 1.25rem);
+      margin-block: 1.25rem 2rem;
+      opacity: 0.9;
+    }
+
+    /* CONTENEDOR MULTIMEDIA VIDEO/PORTADA */
+    .media-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .media-wrapper iframe, .media-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(45deg, #1e293b, #334155);
+    }
+
+    .play-btn {
+      width: 64px;
+      height: 64px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 20px rgba(22, 163, 74, 0.5);
+    }
+
+    /* BOTONES ACCESIBLES (>=44px) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 52px;
+      padding: 0.85rem 1.75rem;
+      border-radius: 0.6rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--accent);
+      color: #ffffff;
+      width: 100%;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.35);
+    }
+
+    .btn-whatsapp svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    /* 4. BENEFICIOS Y SERVICIOS */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: var(--gutter);
+    }
+
+    .card-container {
+      container-type: inline-size;
+      container-name: benefit-card;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(30, 58, 138, 0.08);
+      color: var(--primary);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.975rem;
+    }
+
+    /* 5. TESTIMONIOS (CARRUSEL SWIPE / SNAP NATIVO) */
+    .testimonials-section {
+      background-color: #f1f5f9;
+    }
+
+    .testimonial-carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .testimonial-card {
+      flex: 0 0 min(100%, 360px);
+      scroll-snap-align: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stars {
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .testimonial-author {
+      margin-top: 1.25rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .testimonial-role {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* 6. CALL TO ACTION FINAL */
+    .cta-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: 1.5rem;
+      padding: clamp(2.5rem, 4vw, 4rem) 2rem;
+      text-align: center;
+      max-width: 850px;
+      margin-inline: auto;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-banner h2 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .cta-banner .btn {
+      max-width: 400px;
+      margin-inline: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary-dark);
+      color: #94a3b8;
+      padding-block: 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    @container benefit-card (min-width: 320px) {
+      .card { padding: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        Claudia Vaca
+        <span>Century 21 Magno</span>
+      </a>
+      <a href="https://wa.me/59163418808?text=Hola%20Claudia,%20quiero%20recibir%20asesor%C3%ADa%20inmobiliaria%20en%20Santa%20Cruz." 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="btn btn-whatsapp" 
+         style="min-height: 42px; padding: 0.5rem 1rem; font-size: 0.9rem; width: auto;"
+         aria-label="Contactar a Claudia Vaca por WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.006L2 22l5.127-1.343c1.46.797 3.107 1.217 4.882 1.218h.004c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.038-5.174-2.923-7.06C17.197 3.037 14.686 2 12.012 2zm5.952 14.156c-.247.697-1.442 1.33-1.996 1.398-.512.063-1.178.09-3.382-.823-2.819-1.168-4.636-4.032-4.776-4.22-.14-.187-1.144-1.524-1.144-2.907 0-1.383.725-2.062.983-2.342.258-.28.562-.35.75-.35.187 0 .375.003.538.01.175.008.411-.066.643.49.247.593.843 2.06.917 2.21.075.15.125.326.025.525-.1.2-.15.325-.298.5-.15.175-.314.39-.448.523-.15.15-.306.315-.132.614.175.3.777 1.284 1.67 2.08 1.15.1.023 2.057 1.59 2.332 1.838.275.247.437.212.599.025.162-.187.698-.814.885-1.096.187-.282.375-.236.637-.138.262.097 1.662.784 1.949.927.287.143.475.213.549.338.075.125.075.723-.172 1.42z"/></svg>
+        WhatsApp Directo
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1 & 2. TÍTULO PERSUASIVO Y MULTIMEDIA VIDEO/PORTADA -->
+    <section class="hero">
+      <div class="container grid-2">
+        <div>
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Asesoría Inmobiliaria Premier
+          </div>
+          <h1>Vende o Invierte en Bienes Raíces en Santa Cruz con <span class="text-highlight">Seguridad Garantizada</span></h1>
+          <p>Te ayudo a maximizar el valor de tu propiedad o encontrar la inversión perfecta con la agilidad, transparencia y respaldo institucional de <strong>Century 21 Magno</strong>.</p>
+          
+          <!-- 3. CALL TO ACTION (ENLACE A WHATSAPP) -->
+          <a href="https://wa.me/59163418808?text=Hola%20Claudia,%20quiero%20solicitar%20una%20evaluaci%C3%B3n%20para%20mi%20propiedad%20o%20inversi%C3%B3n." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-whatsapp"
+             aria-label="Solicitar Asesoría por WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.006L2 22l5.127-1.343c1.46.797 3.107 1.217 4.882 1.218h.004c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.038-5.174-2.923-7.06C17.197 3.037 14.686 2 12.012 2zm5.952 14.156c-.247.697-1.442 1.33-1.996 1.398-.512.063-1.178.09-3.382-.823-2.819-1.168-4.636-4.032-4.776-4.22-.14-.187-1.144-1.524-1.144-2.907 0-1.383.725-2.062.983-2.342.258-.28.562-.35.75-.35.187 0 .375.003.538.01.175.008.411-.066.643.49.247.593.843 2.06.917 2.21.075.15.125.326.025.525-.1.2-.15.325-.298.5-.15.175-.314.39-.448.523-.15.15-.306.315-.132.614.175.3.777 1.284 1.67 2.08 1.15.1.023 2.057 1.59 2.332 1.838.275.247.437.212.599.025.162-.187.698-.814.885-1.096.187-.282.375-.236.637-.138.262.097 1.662.784 1.949.927.287.143.475.213.549.338.075.125.075.723-.172 1.42z"/></svg>
+            ¡Agenda tu Asesoría por WhatsApp!
+          </a>
+        </div>
+
+        <!-- MULTIMEDIA / PRESENTACIÓN VIDEO -->
+        <div class="media-wrapper">
+          <div class="media-placeholder">
+            <div class="play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffffff"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <strong style="font-size: 1.1rem; margin-bottom: 0.25rem;">Conoce a Claudia Vaca</strong>
+            <span style="font-size: 0.875rem; color: #cbd5e1;">Century 21 Magno - Santa Cruz, Bolivia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BENEFICIOS Y SERVICIOS -->
+    <section>
+      <div class="container">
+        <h2>¿Por qué Trabajar Conmigo?</h2>
+        <div class="benefits-grid">
+          
+          <div class="card-container">
+            <div class="card">
+              <div class="card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </div>
+              <h3>Valoración Real de Mercado</h3>
+              <p>Determinamos el precio óptimo para tu inmueble en Santa Cruz mediante análisis comparativos actualizados para vender al mejor precio sin perder tiempo.</p>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card">
+              <div class="card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h3>Seguridad Legal y Financiera</h3>
+              <p>Acompañamiento integral en todo el proceso técnico, legal y tramitación contractual respaldado por el equipo jurídico de Century 21 Magno.</p>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <div class="card">
+              <div class="card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </div>
+              <h3>Marketing Inmobiliario de Alto Impacto</h3>
+              <p>Promoción en redes, portales destacados y la red nacional e internacional de agentes para conectar rápidamente con compradores calificados.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TESTIMONIOS -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2>Lo que Dicen mis Clientes</h2>
+        <div class="testimonial-carousel">
+          
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>"Claudia logró vender nuestro departamento en Equipetrol en tiempo récord y al precio acordado. Su atención y profesionalismo nos dieron mucha tranquilidad."</p>
+            </div>
+            <div>
+              <div class="testimonial-author">Roberto Mendoza</div>
+              <div class="testimonial-role">Propietario en Santa Cruz</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>"Excelente asesoría para mi primera inversión en bienes raíces. Claudia me guio paso a paso en la documentación y elección de la zona."</p>
+            </div>
+            <div>
+              <div class="testimonial-author">María Fernanda Ríos</div>
+              <div class="testimonial-role">Inversionista</div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>"Respuesta inmediata y un trato súper transparente. La red de Century 21 Magno coordinada por Claudia marca toda la diferencia."</p>
+            </div>
+            <div>
+              <div class="testimonial-author">Carlos Justiniano</div>
+              <div class="testimonial-role">Comprador de Casa</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CALL TO ACTION FINAL -->
+    <section>
+      <div class="container">
+        <div class="cta-banner">
+          <h2>¿Listo para dar el siguiente paso inmobiliario?</h2>
+          <p>No dejes tu patrimonio en manos del azar. Conversemos hoy mismo sin compromiso y diseñemos la estrategia perfecta para tu propiedad.</p>
+          
+          <a href="https://wa.me/59163418808?text=Hola%20Claudia,%20me%20gustar%C3%ADa%20consultarte%20sobre%20un%20inmueble%20en%20Santa%20Cruz." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-whatsapp"
+             aria-label="Hablar con Claudia Vaca por WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.006L2 22l5.127-1.343c1.46.797 3.107 1.217 4.882 1.218h.004c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.038-5.174-2.923-7.06C17.197 3.037 14.686 2 12.012 2zm5.952 14.156c-.247.697-1.442 1.33-1.996 1.398-.512.063-1.178.09-3.382-.823-2.819-1.168-4.636-4.032-4.776-4.22-.14-.187-1.144-1.524-1.144-2.907 0-1.383.725-2.062.983-2.342.258-.28.562-.35.75-.35.187 0 .375.003.538.01.175.008.411-.066.643.49.247.593.843 2.06.917 2.21.075.15.125.326.025.525-.1.2-.15.325-.298.5-.15.175-.314.39-.448.523-.15.15-.306.315-.132.614.175.3.777 1.284 1.67 2.08 1.15.1.023 2.057 1.59 2.332 1.838.275.247.437.212.599.025.162-.187.698-.814.885-1.096.187-.282.375-.236.637-.138.262.097 1.662.784 1.949.927.287.143.475.213.549.338.075.125.075.723-.172 1.42z"/></svg>
+            Contactar por WhatsApp (+591 63418808)
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Claudia Vaca</strong> — Agente Inmobiliario Asociado a <strong>Century 21 Magno</strong></p>
+      <p style="margin-top: 0.5rem;">Santa Cruz, Bolivia | Operaciones bajo la red internacional Century 21</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Manejo de interacción de video placeholder
+      const mediaWrapper = document.querySelector('.media-wrapper');
+      if (mediaWrapper) {
+        mediaWrapper.addEventListener('click', () => {
+          // Permite cargar un video real o embebido fácilmente
+        });
+      }
+    });
+  </script>
+</body>
+</html>
